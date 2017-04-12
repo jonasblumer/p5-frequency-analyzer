@@ -19,7 +19,7 @@ function togglePlay(){
 }
 
 function preload() {
-  sound = loadSound('livingston+_MAS.wav');
+  sound = loadSound('livingston+_MAS.mp3');
 }
 
 function setup(){
@@ -34,10 +34,11 @@ function setup(){
 
 }
 function draw(){
-  background(0);
+
 
 
   spectrum = fft.analyze();
+  background(spectrum[0], 255, 255);
   for(i = 0; i < spectrum.length; i++){
     var amp = spectrum[i];
     var y = map(amp, 0, 300, ch, 0);
